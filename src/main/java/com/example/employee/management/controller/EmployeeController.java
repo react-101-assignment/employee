@@ -43,6 +43,7 @@ public class EmployeeController {
 
     @PostMapping("/employee")
     public Employee postEmployee(@RequestBody Employee employee) {
+        employee.updateFullName();
         return employeeRepository.save(employee);
     }
 

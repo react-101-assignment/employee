@@ -1,5 +1,6 @@
 package com.example.employee.management.model;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -28,7 +29,7 @@ public class Employee {
 
     @PostLoad
     @PreUpdate
-    private void updateFullName() {
+    public void updateFullName() {
         StringBuilder fullNameBuilder = new StringBuilder();
         if (firstName != null && !firstName.isEmpty()) {
             fullNameBuilder.append(firstName);
